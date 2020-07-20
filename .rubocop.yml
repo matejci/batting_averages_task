@@ -1,0 +1,33 @@
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 1500
+
+# No space makes the method definition shorter and differentiates
+# from a regular assignment.
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+# Most readable form.
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: false
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+
+Layout/SpaceInsideBlockBraces:
+  SpaceBeforeBlockParameters: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/Documentation:
+  Enabled: false

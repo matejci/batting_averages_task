@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="table">
+      <p>Filter: <%= @filter || 'N/A' %></p>
+      <br/>
+      <table style="width: 100%">
+        <tr>
+          <th>playerID</th>
+          <th>yearID</th>
+          <th>Team name(s)</th>
+          <th>Batting Average</th>
+        </tr>
+        <% @data.each do |record| %>
+          <tr>
+            <td style="text-align: center"><%= record.player_id %></td>
+            <td style="text-align: center"><%= record.year_id %></td>
+            <td style="text-align: center"><%= record.team_names.join(', ') %></td>
+            <td style="text-align: center"><%= record.batting_average %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </body>
+</html>
