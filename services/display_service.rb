@@ -28,6 +28,6 @@ class DisplayService
     end
 
     puts "Results generated: #{full_path}"
-    `xdg-open /home/matejci/Code/batting_averages_app/results.html` if RUBY_PLATFORM =~ /linux/ && ENV.fetch('SHOW_RESULTS', false)
+    `xdg-open "#{full_path}"` if RUBY_PLATFORM =~ /linux/ && ENV.fetch('SHOW_RESULTS', false)
   end
 end
