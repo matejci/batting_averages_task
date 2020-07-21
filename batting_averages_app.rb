@@ -6,15 +6,16 @@ require './services/display_service'
 # require 'byebug'
 
 class BattingAveragesApp
-  def initialize
-    @file = ARGV[0]
-    @filter = ARGV[1]
+  def initialize(params)
+    @file = params[0]
+    @filter = params[1]
   end
 
   def run
     load_teams_file
     calculate_averages
     display_results
+    @averages # returning this just for testing to confirm results are generated, not needed otherwise
   rescue StandardError => e
     puts "Something went wrong: #{e.inspect}"
   end
@@ -34,4 +35,4 @@ class BattingAveragesApp
   end
 end
 
-BattingAveragesApp.new.run
+BattingAveragesApp.new(ARGV).run

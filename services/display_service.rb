@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# require 'byebug'
 require 'erb'
 
 class DisplayService
@@ -13,6 +12,8 @@ class DisplayService
 
   def call
     render_results
+  rescue StandardError => e
+    puts "Error: #{e.message}"
   end
 
   private
@@ -27,6 +28,6 @@ class DisplayService
     end
 
     puts "Results generated: #{full_path}"
-    `xdg-open /home/matejci/Code/batting_averages_app/results.html` if RUBY_PLATFORM =~ /linux/
+    `xdg-open /home/matejci/Code/batting_averages_app/results.html` if RUBY_PLATFORM =~ /linux/ && ENV.fetch('SHOW_RESULTS', false)
   end
 end

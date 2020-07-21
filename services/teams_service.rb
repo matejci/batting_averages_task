@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# require 'byebug'
 require 'csv'
 
 class TeamsService
@@ -8,6 +7,8 @@ class TeamsService
 
   def call
     load_teams_file
+  rescue StandardError => e
+    puts "Error: #{e.message}"
   end
 
   private

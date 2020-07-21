@@ -8,10 +8,10 @@
 - Install dependencies by running: `bundle install`
 
 ### Few examples:
-- ruby app.rb '/home/matejci/Batting.csv'
-- ruby app.rb '/home/matejci/Batting.csv' 'year: 2000'
-- ruby app.rb '/home/matejci/Batting.csv' 'team_name: Boston Red Stockings'
-- ruby app.rb '/home/matejci/Batting.csv' 'year_and_team_name: 1871, Boston Red Stockings'
+- ruby batting_averages_app.rb '/home/matejci/Batting.csv'
+- ruby batting_averages_app.rb '/home/matejci/Batting.csv' 'year: 2000'
+- ruby batting_averages_app.rb '/home/matejci/Batting.csv' 'team_name: Boston Red Stockings'
+- ruby batting_averages_app.rb '/home/matejci/Batting.csv' 'year_and_team_name: 1871, Boston Red Stockings'
 
 ### Note:
 - that first argument is the path to a file (make sure user has right permissions to access the file), second argument is a filter.
@@ -19,10 +19,11 @@
 
 ### Results:
 - After script is finished, 'results.html' file will be generated in root of the app's directory (you should get the path printed in console).
-- For Linux based hosts, 'results.html' will be opened automatically by default browser and display the results.
+- For Linux based hosts, 'results.html' can be opened automatically by default browser and display the results.
+- In order for this to happen you should also set the environment variable: `export SHOW_RESULTS=true`. This is disabled by default because it can be annoying when running tests suite.
 - For MacOS/Windows based hosts this is not supported, because I don't have Mac nor Windows OS so couldn't test it...
 - Text of the exercise and csv files used, can be found in 'task' directory.
 
 ## Tests
 
-Run tests by executing: ruby -I . -e "Dir.glob('**/*_test.rb') { |f| require(f) }"
+- Run tests by executing: `ruby -I . -e "Dir.glob('**/*_test.rb') { |f| require(f) }"`

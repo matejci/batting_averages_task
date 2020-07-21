@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# require 'byebug'
 require 'csv'
 
 class AverageCalculationService
@@ -15,6 +14,8 @@ class AverageCalculationService
 
   def call
     process_file
+  rescue StandardError => e
+    puts "Error: #{e.message}"
   end
 
   private
@@ -65,7 +66,5 @@ class AverageCalculationService
     end
 
     results_hash.values.sort_by { |val| val.batting_average }.reverse!
-  rescue StandardError => e
-    puts "Error: #{e.message}"
   end
 end
